@@ -1,0 +1,480 @@
+/* Base and Container */
+body {
+    background: linear-gradient(110deg, #FFD479 0%, #FAB591 100%);
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.container {
+    background: #fff;
+    margin: 36px auto 60px;
+    padding: 32px 36px 28px;
+    border-radius: 20px;
+    max-width: 760px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Heading */
+h2 {
+    color: #232A33;
+    text-align: center;
+    letter-spacing: 1.2px;
+    font-weight: 700;
+    font-size: 1.9rem;
+    margin-bottom: 18px;
+}
+
+/* Controls Panel */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls label {
+    font-weight: 500;
+    color: #343a40;
+    font-size: 15px;
+}
+
+.controls input[type='number'],
+.controls select {
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #d7dae5;
+    margin-left: 7px;
+    box-shadow: 0 1px 4px rgba(140, 140, 255, 0.07);
+    background: #f5f8ff;
+    transition: border 0.3s ease;
+    width: 80px;
+    text-align: center;
+}
+
+.controls input:focus,
+.controls select:focus {
+    border: 2px solid #7ca1ff;
+    outline: none;
+}
+
+.controls button {
+    background: linear-gradient(90deg, #4d7fff 0%, #6ea9ff 100%);
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    border: none;
+    border-radius: 11px;
+    padding: 9px 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(73, 106, 255, 0.3);
+    transition: background 0.3s ease, transform 0.22s ease;
+    font-size: 15px;
+}
+
+.controls button:hover {
+    background: linear-gradient(90deg, #3366ff 40%, #65aaff 100%);
+    transform: translateY(-2px) scale(1.07);
+}
+
+/* Input Table Styling */
+#inputTable table {
+    width: 100%;
+    margin-top: 18px;
+    border-radius: 14px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(60, 110, 200, 0.07);
+    user-select: none;
+}
+
+#inputTable th,
+#inputTable td {
+    border: none;
+    padding: 14px 10px;
+    text-align: center;
+    font-size: 15px;
+    color: #212529;
+}
+
+#inputTable th {
+    background: #f5f8ff;
+    color: #45505e;
+    font-weight: 600;
+    letter-spacing: 0.55px;
+    border-bottom: 2px solid #ddeaee;
+}
+
+#inputTable td input {
+    margin: 0 auto;
+    display: block;
+    width: 70%;
+    padding: 8px 0 8px 11px;
+    border-radius: 10px;
+    border: 1.5px solid #d8deeef0;
+    background: #fafbff;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(30, 40, 68, 0.1);
+}
+
+#inputTable td input:focus {
+    border-color: #7aa5ff;
+    outline: none;
+}
+
+/* Results Section Layout */
+.results-section {
+    display: flex;
+    gap: 38px;
+    margin-top: 28px;
+    align-items: flex-start;
+}
+
+/* Gantt Chart Container */
+#gantt {
+    flex: 1;
+    min-width: 0;
+}
+
+#gantt h4 {
+    font-weight: 600;
+    color: #1b7a94;
+    margin-bottom: 14px;
+    font-size: 1.15rem;
+}
+
+/* Gantt bar row */
+.gantt-bar {
+    margin: 7px 0;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    gap: 12px;
+    color: #1e2a41;
+    letter-spacing: 0.2px;
+}
+
+.bar {
+    display: inline-flex;
+    align-items: center;
+    height: 34px;
+    font-size: 15px;
+    padding: 0 14px 0 12px;
+    border-radius: 10px;
+    font-weight: 500;
+    color: #fff;
+    margin-right: 7px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.11);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.18s ease;
+}
+.bar span {
+    font-size: 13px;
+    color: #e9f7ff;
+    margin-left: 10px;
+    user-select: none;
+}
+
+/* Distinct gradient colors for processes */
+.P1 {
+    background: linear-gradient(90deg, #ff6c6c 60%, #f18e6e 100%);
+}
+.P2 {
+    background: linear-gradient(90deg, #6bbafc 65%, #4dd6fa 100%);
+}
+.P3 {
+    background: linear-gradient(90deg, #60f38f 60%, #43dc95 100%);
+}
+.P4 {
+    background: linear-gradient(90deg, #ffe27a 70%, #fec961 100%);
+}
+.P5 {
+    background: linear-gradient(90deg, #ae73fc 70%, #8f59d7 100%);
+}
+
+/* Results Table */
+#results {
+    min-width: 250px;
+    flex-basis: 40%;
+}
+
+#results table {
+    border-radius: 14px;
+    border-collapse: separate;
+    overflow: hidden;
+    box-shadow: 0 3px 18px rgba(80, 80, 130, 0.12);
+    width: 100%;
+    user-select: none;
+}
+
+#results th,
+#results td {
+    border: none;
+    text-align: center;
+    padding: 13px 9px;
+    font-size: 15px;
+    color: #222f44;
+}
+
+#results th {
+    background: #e4ecf7;
+    color: #1c2039;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-bottom: 1.6px solid #ccd6e9;
+}
+
+#results td {
+    background: #fbfcfd;
+    transition: background-color 0.3s ease;
+}
+
+#results td:hover {
+    background-color: #e8f0ff;
+    cursor: default;
+}
+
+/* Summary below results */
+#results .summary {
+    margin-top: 16px;
+    font-weight: 700;
+    color: #036c8f;
+    font-size: 17px;
+    letter-spacing: 0.55px;
+    user-select: none;
+    display: flex;              /* Use flex to lay out children inline */
+    gap: 24px;                  /* Spacing between the two summary texts */
+    justify-content: flex-start; /* Align left by default */
+}
+
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 820px) {
+    .container {
+        width: 90%;
+        padding: 24px 28px 24px;
+    }
+    .controls {
+        justify-content: space-around;
+    }
+    .controls label {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+    .controls input[type='number'],
+    .controls select {
+        width: 60px;
+        font-size: 14px;
+        padding: 6px 8px;
+    }
+    .controls button {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+    .results-section {
+        flex-direction: column;
+        gap: 26px;
+        align-items: stretch;
+    }
+    #results {
+        min-width: 100%;
+        flex-basis: auto;
+    }
+    #gantt h4 {
+        font-size: 1.05rem;
+    }
+}
+
+/* Small Mobile (less than 480px) */
+@media screen and (max-width: 480px) {
+    h2 {
+        font-size: 1.4rem;
+        margin-bottom: 14px;
+    }
+    .controls {
+        flex-direction: column;
+        gap: 14px;
+    }
+    .controls label {
+        width: 100%;
+        text-align: center;
+    }
+    .controls input[type='number'],
+    .controls select {
+        width: 90%;
+        font-size: 16px;
+        margin-left: 0;
+        margin-top: 6px;
+    }
+    .controls button {
+        width: 90%;
+        font-size: 15px;
+        padding: 10px 0;
+    }
+}
+.results-section {
+    display: flex;
+    gap: 32px;
+    margin-top: 28px;
+    align-items: flex-start;
+    flex-wrap: wrap; /* allows wrapping on smaller widths */
+}
+
+#results {
+    flex-basis: 40%;
+    min-width: 240px;
+    max-width: 320px;
+    box-sizing: border-box;
+    overflow-x: auto; /* adds horizontal scroll if table too wide */
+    padding: 12px 14px;
+    background: #fff; /* ensure white background */
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+#results table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+#results th,
+#results td {
+    padding: 11px 8px;
+    text-align: center;
+    font-size: 15px;
+}
+
+#results th {
+    background: #e6f0f8;
+    border-bottom: 1.5px solid #cbd7ed;
+}
+
+#results td {
+    background: #fafbfc;
+}
+
+/* Responsive adjustment */
+@media screen and (max-width: 650px) {
+    .results-section {
+        flex-direction: column;
+        gap: 24px;
+    }
+    #results {
+        flex-basis: auto;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+}
+.results-section {
+    display: flex;
+    gap: 32px;
+    margin-top: 28px;
+    align-items: flex-start;
+    flex-wrap: wrap; /* allows wrapping on smaller screens */
+}
+
+#results {
+    flex-basis: 40%;
+    min-width: 240px;
+    max-width: 320px;
+    box-sizing: border-box;
+    overflow-x: auto; /* enables horizontal scrolling if needed */
+    padding: 12px 14px;
+    background: #fff; /* keep white card background */
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+#results table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+#results th,
+#results td {
+    padding: 11px 8px;
+    text-align: center;
+    font-size: 15px;
+}
+
+#results th {
+    background: #e6f0f8;
+    border-bottom: 1.5px solid #cbd7ed;
+}
+
+#results td {
+    background: #fafbfc;
+}
+
+/* Responsive: stack Gantt and results vertically */
+@media screen and (max-width: 650px) {
+    .results-section {
+        flex-direction: column;
+        gap: 24px;
+    }
+    #results {
+        flex-basis: auto;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+}
+#gantt {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.gantt-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Horizontal scroll if bars overflow */
+    padding-left: 10px;
+    font-weight: 600;
+    color: #222222;
+    letter-spacing: 0.35px;
+    font-size: 14px;
+}
+
+.bar {
+    height: 36px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 9px;
+    padding: 0 14px 0 10px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.12);
+    border-bottom: 3px solid #fff8;
+    letter-spacing: 0.2px;
+    user-select: none;
+}
+
+.bar span {
+    margin-left: 9px;
+    font-size: 13px;
+    color: #f0f0f0;
+    font-weight: 500;
+}
+
+/* Distinct colors for processes */
+.P1 { background: linear-gradient(90deg, #ff5c5c 70%, #f18a6e 100%); }
+.P2 { background: linear-gradient(90deg, #6bbafb 70%, #4fd6fa 100%); }
+.P3 { background: linear-gradient(90deg, #60f38e 70%, #43db92 100%); }
+.P4 { background: linear-gradient(90deg, #ffe079 70%, #fec851 100%); }
+.P5 { background: linear-gradient(90deg, #ad72fc 70%, #8e58d8 100%); }

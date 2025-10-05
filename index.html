@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive CPU Scheduling Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Interactive CPU Scheduling Simulator</h2>
+    <div class="controls">
+        <label>Number of processes:
+            <input type="number" id="processCount" min="1" value="3">
+        </label>
+        <button onclick="createTable()">Create</button>
+        <label>Algorithm:
+            <select id="algorithm">
+                <option value="FCFS">FCFS</option>
+                <option value="SJF">SJF</option>
+                <option value="PRIORITY">Priority</option>
+                <option value="RR">Round Robin</option>
+            </select>
+        </label>
+        <label id="quantumLabel" style="display:none;">Quantum:
+            <input type="number" id="quantum" min="1" value="2">
+        </label>
+        <button onclick="simulate()">Simulate</button>
+        <button onclick="clearAll()">Clear</button>
+    </div>
+    <div id="inputTable"></div>
+    <div class="results-section">
+        <div id="gantt"></div>
+        <div id="results"></div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
